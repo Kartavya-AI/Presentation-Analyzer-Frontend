@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: " Resume Generator Agent",
-  description: "Create professional, AI-powered resumes instantly. Tailored to your career goals and optimized for applicant tracking systems (ATS).",
+  title: "Presentation Analyzer",
+  description: "Automatically review and enhance your presentations. Get actionable insights, improve clarity, ensure consistency, and deliver impactful decks with AI-powered analysis.",
 };
 
 export default function RootLayout({

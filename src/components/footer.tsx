@@ -1,70 +1,62 @@
+
+import Link from "next/link";
 import React from "react";
 
 function Footer() {
     return (
-        <div>
-            <footer className="px-4 md:px-36 text-gray-700 bg-zinc-100 py-10 pt-20">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    {/* Logo + Description */}
-                    <div>
-                        <h3 className="text-xl font-semibold text-gray-900">
-                            Resume Generator Agent
-                        </h3>
-                        <p className="mt-2 text-sm leading-relaxed">
-                            Create professional, AI-powered resumes instantly. 
-                            Tailored to your career goals and optimized for applicant tracking systems (ATS).
-                        </p>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-md font-semibold mb-2">Quick Links</h4>
-                        <ul className="space-y-1 text-sm">
-                            <li>
-                                <a href="#" className="hover:underline">Home</a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:underline">How It Works</a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:underline">Templates</a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:underline">Pricing</a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:underline">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Social Links */}
-                    <div>
-                        <h4 className="text-md font-semibold mb-2">Connect With Us</h4>
-                        <ul className="flex gap-4 text-sm">
-                            <li>
-                                <a href="#" className="hover:text-blue-600">Twitter</a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:text-pink-600">Instagram</a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:text-blue-800">LinkedIn</a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:text-green-600">GitHub</a>
-                            </li>
-                        </ul>
-                    </div>
+        <footer className="px-4 md:px-36 text-gray-700 bg-zinc-100 py-10 pt-20">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                {/* Logo + Description */}
+                <div>
+                    <h3 className="text-xl font-semibold text-gray-900">
+                        Presentation Analyzer
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed">
+                        Automatically review and enhance your presentations. 
+                        Get actionable insights, improve clarity, ensure consistency, 
+                        and deliver impactful decks with AI-powered analysis.
+                    </p>
                 </div>
 
-                {/* Bottom note */}
-                <div className="mt-10 text-center text-xs text-gray-500">
-                    © {new Date().getFullYear()} Resume Generator Agent. All rights reserved.
+                {/* Quick Links */}
+                <div>
+                    <h4 className="text-md font-semibold mb-2">Quick Links</h4>
+                    <ul className="space-y-1 text-sm">
+                        <li>
+                            <Link href="/" className="hover:underline">Home</Link>
+                        </li>
+                        <li>
+                            <Link href="/analyze" className="hover:underline">Analyze</Link>
+                        </li>
+                    </ul>
                 </div>
-            </footer>
-        </div>
+
+                {/* Social Links */}
+                <div>
+                    <h4 className="text-md font-semibold mb-2">Connect With Us</h4>
+                    <ul className="flex gap-4 text-sm">
+                        <li>
+                            <a href="#" className="hover:text-blue-600">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="#" className="hover:text-pink-600">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="#" className="hover:text-blue-800">LinkedIn</a>
+                        </li>
+                        <li>
+                            <a href="#" className="hover:text-green-600">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* Bottom note */}
+            <div className="mt-10 text-center text-xs text-gray-500">
+                © {new Date().getFullYear()} Presentation Analyzer. All rights reserved.
+            </div>
+        </footer>
     );
 }
 

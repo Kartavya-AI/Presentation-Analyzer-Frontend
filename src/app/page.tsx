@@ -8,39 +8,39 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import resumeIllustration from "../../public/images/resume-genius-9si2noVCVH8-unsplash.jpg";
+import presentationIllustration from "../../public/images/airfocus-K_VeavYEfdA-unsplash.jpg";
 import open from "../../public/images/share (1).png";
 
 const reviews = [
     {
-        name: "Neha Kapoor",
-        username: "@neha_writer",
-        body: "The Resume Generator Agent made creating my resume so simple. I just gave my details and it instantly generated a professional, ATS-friendly format.",
+        name: "Ananya Mehta",
+        username: "@ananya_sales",
+        body: "Presentation Analyzer saved me hours before a client pitch. It summarized key insights and highlighted gaps I hadn’t noticed, making my deck flow seamlessly.",
     },
     {
-        name: "Arjun Malhotra",
-        username: "@arjun_jobseeker",
-        body: "I loved how it tailored my resume for different roles. The AI suggestions on skills and keywords really boosted my chances of getting shortlisted.",
+        name: "Rohit Sharma",
+        username: "@rohit_marketing",
+        body: "As a marketing manager, I loved how it checked branding consistency and suggested design tweaks. My slides looked polished and professional instantly.",
     },
     {
-        name: "Simran Joshi",
-        username: "@simran_fresher",
-        body: "As a fresher, I struggled with writing resumes. This tool gave me multiple polished templates and highlighted my strengths perfectly.",
+        name: "Priya Nair",
+        username: "@priya_educator",
+        body: "I use it for my lectures. The AI helps me simplify content and ensure my slides are engaging for students while maintaining clarity in key concepts.",
     },
     {
-        name: "Ravi Deshmukh",
-        username: "@ravi_professional",
-        body: "For someone with years of experience, it helped me cut down clutter and focus on key achievements. The result looked modern and impactful.",
+        name: "Arjun Khanna",
+        username: "@arjun_exec",
+        body: "Before board meetings, this tool is a lifesaver. It points out missing context, suggests smoother transitions, and ensures my story is clear to stakeholders.",
     },
     {
-        name: "Pooja Nair",
-        username: "@pooja_consultant",
-        body: "I liked how it automatically structured my resume to match industry standards. It even suggested action verbs that made my profile stronger.",
+        name: "Simran Kaur",
+        username: "@simran_designer",
+        body: "Even as a designer, I found the automated design checks helpful. It caught alignment issues and suggested visual balance improvements I might have missed.",
     },
     {
-        name: "Karan Patel",
-        username: "@karan_careercoach",
-        body: "I recommend this to my clients. Instead of wasting time formatting, they can instantly generate tailored resumes and focus on interview prep.",
+        name: "Karan Verma",
+        username: "@karan_consultant",
+        body: "I recommend this to all my clients. Instead of manually reviewing slides, they get instant feedback on structure, flow, and audience alignment.",
     },
 ];
 
@@ -86,29 +86,39 @@ const ReviewCard = ({
 
 const steps = [
     {
-        title: "Step 1: Collect User Input",
+        title: "Step 1: Upload Presentation",
         description:
-            "Gather unstructured resume information from the user (name, experience, education, skills, achievements). Input can be free text or form-based. (API: /generate-resume)",
+            "User uploads a presentation deck (PPTX, PDF, or Keynote). The system securely processes the file with encrypted transfers. (API: /upload-presentation)",
     },
     {
-        title: "Step 2: Parse & Structure Data",
+        title: "Step 2: Content Summarization",
         description:
-            "AI extracts key sections like Work Experience, Education, Skills, Projects, and Certifications from the raw input. (API: /parse-resume)",
+            "AI extracts main points, key themes, and insights from each slide, providing a concise overview of the entire presentation. (API: /summarize-content)",
     },
     {
-        title: "Step 3: Generate Resume Draft",
+        title: "Step 3: Structure & Flow Analysis",
         description:
-            "The system converts structured details into a polished resume draft in Markdown format, applying consistent formatting and styling. (API: /generate-resume)",
+            "The tool analyzes narrative coherence, checks for logical gaps, and evaluates slide transitions for better storytelling. (API: /analyze-structure)",
     },
     {
-        title: "Step 4: Customize & Optimize",
+        title: "Step 4: Design & Visual Review",
         description:
-            "User can select templates, adjust tone, highlight achievements, and tailor resumes for specific roles. (API: /optimize-resume)",
+            "AI reviews slide layouts for clarity, consistency, and visual impact. Suggestions include formatting, color balance, and alignment fixes. (API: /review-design)",
     },
     {
-        title: "Step 5: Export & Share",
+        title: "Step 5: Audience Readiness Check",
         description:
-            "Export the final resume in PDF, DOCX, or Markdown. Integrate with job portals or email directly. (API: /export-resume)",
+            "The system evaluates if the content aligns with the intended audience, recommending additional context or simplifications where needed. (API: /audience-check)",
+    },
+    {
+        title: "Step 6: Actionable Recommendations",
+        description:
+            "Generates concise feedback on improving content, design, and structure, along with engagement-focused suggestions. (API: /recommendations)",
+    },
+    {
+        title: "Step 7: Export & Share Insights",
+        description:
+            "Export analysis as a PDF or DOCX report, or share improvement suggestions with collaborators directly. (API: /export-analysis)",
     },
 ];
 
@@ -119,33 +129,34 @@ export default function Home() {
                 {/* Badge */}
                 <div className="group mb-5 relative mx-auto flex items-center justify-center rounded-full px-2 py-1.5 bg-zinc-100 shadow-zinc-500 shadow-md inset-shadow-2xs inset-shadow-white">
                     <h1 className="bg-zinc-100 shadow-zinc-500 shadow-md inset-shadow-2xs inset-shadow-white rounded-full h-8 w-8 flex justify-center items-center">
-                        📄
+                        📊
                     </h1>
 
                     <div className="text-sm px-3 font-medium text-zinc-600">
-                        AI-Powered Resume Generator Agent
+                        AI-Powered Presentation Analyzer
                     </div>
                 </div>
 
                 {/* Heading */}
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight text-primary mb-6">
-                    Craft Professional Resumes in Seconds with AI
+                    Analyze & Improve Your Presentations <br /> in Seconds with
+                    AI
                 </h1>
 
                 {/* Subheading */}
                 <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8">
-                    Generate ATS-friendly, job-specific resumes tailored to your
-                    skills and experience. Stand out with well-structured,
-                    personalized resumes — built instantly and ready to use.
+                    Automatically review your slides for clarity, structure, and
+                    design. Get instant, actionable feedback to make your
+                    presentations more effective, engaging, and audience-ready.
                 </p>
 
                 {/* CTA */}
                 <div>
                     <Link
-                        href="/resume-generator"
+                        href="/analyze"
                         className="rounded-full px-4 py-2 text-xl hover:shadow-lg cursor-pointer text-zinc-600 bg-zinc-100 shadow-zinc-500 shadow-md flex items-center gap-2"
                     >
-                        <span>Create My Resume</span>
+                        <span>Analyze My Presentation</span>
                         <div className="rounded-full h-9 w-9 flex justify-center items-center hover:shadow-lg cursor-pointer text-zinc-600 bg-zinc-100 shadow-zinc-500 shadow-md">
                             <Image
                                 src={open}
@@ -188,19 +199,20 @@ export default function Home() {
                 {/* Text Section */}
                 <div className="md:w-1/2 text-center md:text-left space-y-4 order-2 md:order-1">
                     <h2 className="text-3xl md:text-5xl font-bold text-primary">
-                        Create Professional Resumes in Seconds with AI.
+                        Transform Your Presentations with AI Insights.
                     </h2>
                     <p className="text-lg text-muted-foreground">
-                        Our AI Resume Generator Agent crafts tailored,
-                        ATS-friendly resumes instantly. Enter your details, pick
-                        a style, and get a polished resume that highlights your
-                        strengths and boosts your chances of landing interviews.
+                        Our AI Presentation Analyzer reviews your slides to
+                        ensure clarity, structure, and impact. It extracts key
+                        insights, checks narrative flow, and provides actionable
+                        design recommendations—helping you deliver more
+                        effective and audience-ready presentations.
                     </p>
                     <div className="mt-4">
-                        <Link href="/resume-generator">
+                        <Link href="/analyze">
                             <button className="shadow-2xl">
                                 <span className="rounded-full px-4 py-2 text-xl hover:shadow-lg cursor-pointer text-zinc-600 bg-zinc-100 shadow-zinc-500 shadow-md inset-shadow-2xs inset-shadow-white">
-                                    ● Generate My Resume
+                                    ● Analyze My Presentation
                                 </span>
                             </button>
                         </Link>
@@ -210,8 +222,8 @@ export default function Home() {
                 {/* Image Section */}
                 <div className="md:w-1/2 mt-10 md:mt-0 order-1 md:order-2 flex bg-zinc-100 shadow-zinc-500 shadow-md inset-shadow-2xs inset-shadow-white p-2 rounded-2xl justify-center">
                     <Image
-                        src={resumeIllustration} // Replace with illustration relevant to resume creation
-                        alt="AI Resume Generator"
+                        src={presentationIllustration} // Replace with illustration relevant to presentation analysis
+                        alt="AI Presentation Analyzer"
                         className="w-full shadow-lg h-full rounded-lg object-cover"
                         width={10}
                         height={10}
@@ -249,15 +261,15 @@ export default function Home() {
                         className="bg-zinc-100 shadow-zinc-500 shadow-md inset-shadow-2xs inset-shadow-white rounded-2xl px-5 my-1"
                     >
                         <AccordionTrigger>
-                            1. What is the Resume Generator Agent?
+                            1. What is the Presentation Analyzer?
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance">
                             <p>
-                                It&apos;s an AI-powered tool that transforms raw
-                                user input into a polished, professional,
-                                ATS-friendly resume. It formats your details,
-                                highlights your strengths, and generates a
-                                ready-to-use resume instantly.
+                                It&apos;s an AI-powered tool that reviews your
+                                presentation decks, summarizes key points,
+                                checks structure, and provides actionable design
+                                and content improvements to help you deliver
+                                impactful presentations.
                             </p>
                         </AccordionContent>
                     </AccordionItem>
@@ -271,10 +283,10 @@ export default function Home() {
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance">
                             <p>
-                                Simply enter your career details, skills, and
-                                achievements. The AI automatically structures
-                                the content, applies professional formatting,
-                                and generates a resume in your chosen style.
+                                Upload your presentation or paste slide content.
+                                The AI analyzes flow, structure, and visuals,
+                                then suggests concise improvements for clarity,
+                                consistency, and audience engagement.
                             </p>
                         </AccordionContent>
                     </AccordionItem>
@@ -284,14 +296,14 @@ export default function Home() {
                         className="bg-zinc-100 shadow-zinc-500 shadow-md inset-shadow-2xs inset-shadow-white rounded-2xl px-5 my-1"
                     >
                         <AccordionTrigger>
-                            3. Can I customize my resume design?
+                            3. Can it check design and visuals?
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance">
                             <p>
-                                Yes. You can choose from multiple templates
-                                (Modern, Minimal, Creative, Professional) and
-                                customize sections like education, work
-                                experience, projects, and skills.
+                                Yes. It reviews slide layouts, typography,
+                                colors, and overall consistency—offering
+                                recommendations to make your presentation
+                                visually engaging and professional.
                             </p>
                         </AccordionContent>
                     </AccordionItem>
@@ -301,14 +313,14 @@ export default function Home() {
                         className="bg-zinc-100 shadow-zinc-500 shadow-md inset-shadow-2xs inset-shadow-white rounded-2xl px-5 my-1"
                     >
                         <AccordionTrigger>
-                            4. Does it create ATS-friendly resumes?
+                            4. Does it analyze audience readiness?
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance">
                             <p>
-                                Absolutely. The generated resumes follow
-                                ATS-friendly formatting and keyword
-                                optimization, so your application passes through
-                                automated hiring systems smoothly.
+                                Absolutely. The tool evaluates whether the
+                                slides align with your intended audience,
+                                highlighting areas where more clarity, context,
+                                or simplification may be needed.
                             </p>
                         </AccordionContent>
                     </AccordionItem>
@@ -318,14 +330,15 @@ export default function Home() {
                         className="bg-zinc-100 shadow-zinc-500 shadow-md inset-shadow-2xs inset-shadow-white rounded-2xl px-5 my-1"
                     >
                         <AccordionTrigger>
-                            5. Can I generate resumes for different job roles?
+                            5. Can I use it for different types of
+                            presentations?
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance">
                             <p>
-                                Yes. You can create tailored resumes for
-                                specific job applications by highlighting
-                                role-relevant skills and achievements in just a
-                                few clicks.
+                                Yes. It&apos;s useful for sales pitches,
+                                investor decks, academic lectures, marketing
+                                campaigns, or any professional presentation
+                                where clarity and impact are essential.
                             </p>
                         </AccordionContent>
                     </AccordionItem>
@@ -339,9 +352,10 @@ export default function Home() {
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance">
                             <p>
-                                Job seekers, students, professionals exploring
-                                new roles, freelancers, and even career coaches
-                                who need quick, high-quality resume drafts.
+                                Sales teams, executives, educators, marketers,
+                                startups, and anyone who needs actionable
+                                feedback to make presentations more effective
+                                and professional.
                             </p>
                         </AccordionContent>
                     </AccordionItem>
@@ -351,13 +365,14 @@ export default function Home() {
                         className="bg-zinc-100 shadow-zinc-500 shadow-md inset-shadow-2xs inset-shadow-white rounded-2xl px-5 my-1"
                     >
                         <AccordionTrigger>
-                            7. Can I export my resume?
+                            7. Can it provide engagement metrics?
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance">
                             <p>
-                                Yes. Resumes can be exported in multiple formats
-                                including PDF, DOCX, and Markdown for editing
-                                flexibility.
+                                Where supported, the tool can analyze past
+                                performance data to identify high-engagement
+                                slides, topics, or sections that resonate most
+                                with your audience.
                             </p>
                         </AccordionContent>
                     </AccordionItem>
@@ -367,14 +382,14 @@ export default function Home() {
                         className="bg-zinc-100 shadow-zinc-500 shadow-md inset-shadow-2xs inset-shadow-white rounded-2xl px-5 my-1"
                     >
                         <AccordionTrigger>
-                            8. Is it free to use?
+                            8. Is my data secure?
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance">
                             <p>
-                                Core resume generation features are free.
-                                Premium features like advanced templates,
-                                multi-language support, and export to DOCX may
-                                require a subscription.
+                                Yes. All data is processed securely with
+                                encryption and temporary storage. Your
+                                presentations remain private and are never
+                                shared.
                             </p>
                         </AccordionContent>
                     </AccordionItem>
