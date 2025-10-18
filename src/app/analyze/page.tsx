@@ -16,7 +16,7 @@ export default function PresentationAnalyzerPage() {
   const [error, setError] = useState<string>("");
 
   const API_URL =
-    "https://presentation-analyzer-977121587860.europe-west1.run.app/analyze-presentation";
+    "https://presentation-analyzer-87738157215.asia-south1.run.app/analyze-presentation";
 
   /** Handle API Call */
   const handleAnalyzePresentation = async () => {
