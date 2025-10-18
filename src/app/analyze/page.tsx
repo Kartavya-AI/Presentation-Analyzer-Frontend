@@ -7,7 +7,7 @@ import { saveAs } from "file-saver";
 interface AnalysisResponse {
   [key: string]: string; // dynamic keys for markdown files
 }
-
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 export default function PresentationAnalyzerPage() {
   const [file, setFile] = useState<File | null>(null);
   const [audienceType, setAudienceType] = useState<string>("");
@@ -15,8 +15,8 @@ export default function PresentationAnalyzerPage() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
 
-  const API_URL =
-    "https://presentation-analyzer-87738157215.asia-south1.run.app/analyze-presentation";
+  // const API_URL =
+  //   "https://presentation-analyzer-87738157215.asia-south1.run.app/analyze-presentation";
 
   /** Handle API Call */
   const handleAnalyzePresentation = async () => {
@@ -34,7 +34,7 @@ export default function PresentationAnalyzerPage() {
       formData.append("file", file);
       formData.append("audience_type", audienceType);
 
-      const res = await axios.post(API_URL, formData, {
+      const res = await axios.post(`${apiUrl}/analyze-presentation`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
